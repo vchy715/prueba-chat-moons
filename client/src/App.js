@@ -1,12 +1,19 @@
-import React from 'react';
-import io from 'socket.io-client';
-const socket = io('http://localhost:4000');
+import React, { Fragment } from 'react';
+
+import MainHeader from './components/MainHeader/MainHeader';
+import Home from './components/Home/Home';
+import ChatRoom from './components/ChatRoom/ChatRoom';
 
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Fragment>
+      <MainHeader />
+      <main>
+        <Home />
+        <ChatRoom />
+      </main>
+    </Fragment>
   );
 }
 
