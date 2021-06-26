@@ -3,11 +3,11 @@ import React from 'react';
 import Button from '../UI/Button/Button';
 import classes from './MainHeader.module.css';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
     <header className={classes['main-header']}>
       <h1>Chat</h1>
-      <Button>Salir</Button>
+      {props.isRegistered && <Button onClick={props.onLeave}>Salir</Button>}
     </header>
   )
 };
