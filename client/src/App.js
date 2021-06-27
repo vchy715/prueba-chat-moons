@@ -19,7 +19,7 @@ function App() {
       <MainHeader isRegistered={isRegistered} onLeave={leaveChatHandler}/>
       <main>
         {!isRegistered && <Home onJoin={joinChatHandler} onSetName={getUserNameHandler}/>}
-        {isRegistered && <ChatRoom onLeave={leaveChatHandler} useName={userName}/>}
+        {isRegistered && <ChatRoom onLeave={leaveChatHandler} userName={userName}/>}
       </main>
     </Fragment>
   );

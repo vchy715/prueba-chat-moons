@@ -1,37 +1,20 @@
 import React from 'react';
 
+import useChat from '../../hooks/useChat';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import MessageForm from '../MessageForm/MessageForm';
 import Card from '../UI/Card/Card';
 import classes from './ChatRoom.module.css';
 
-const ChatRoom = () => {
-  const dummyMessages = [
-    {
-      body: 'hello',
-      id: 'dfajsdfsa',
-      user: {
-        id: 'fsdfasf',
-        name: 'victoria'
-      }
-    },
-    {
-      body: 'hi',
-      id: 'dfajszxdfsa',
-      user: {
-        id: 'fsdfdsasf',
-        name: 'sandra'
-      },
-      owned: true,
-    }
-  ]
+const ChatRoom = (props) => {
+  const {messages, sendMessage} = useChat(props.userName);
+  console.log('in ChatRoom');
   return (
     <Card className={classes.chatroom}>
       <h2>Room:</h2>
       <Card className={classes['chatroom__messages']}>
         <ol>
-          {dummyMessages.map((message) => {
-            console.log(message);
+          {messages.map((message) => {
             return (
             <li key={message.id}>
               <ChatMessage message={message}></ChatMessage>
@@ -39,7 +22,7 @@ const ChatRoom = () => {
           )})}
         </ol>
       </Card>
-      <MessageForm/>
+      <MessageForm onSubmit={sendMessage}/>
     </Card>
   )
 };

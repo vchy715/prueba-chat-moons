@@ -4,8 +4,6 @@ import Card from '../UI/Card/Card';
 import classes from './ChatMessage.module.css';
 
 const ChatMessage = (props) => {
-  console.log(props.message.owned)
-
   return (
     <Card
       className={`${classes['chat-message']} ${props.message.owned ? classes['message-sent'] : classes['message-received']}`}

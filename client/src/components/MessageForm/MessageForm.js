@@ -8,6 +8,7 @@ const MessageForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    props.onSubmit(messageInputRef.current.value);
   }
 
   return (
