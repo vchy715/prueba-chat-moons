@@ -22,7 +22,7 @@ function App() {
       <MainHeader isRegistered={isRegistered} onLeave={leaveChatHandler}/>
       <main>
         {!isRegistered && <Home onJoin={joinChatHandler} onSetName={getUserNameHandler} onSetRoom={getRoomNameHandler}/>}
-        {isRegistered && <ChatRoom userName={userName} roomName={roomName}/>}
+        {isRegistered && <ChatRoom userName={userName} roomName={roomName} onUpdateName={getUserNameHandler}/>}
       </main>
     </Fragment>
   );

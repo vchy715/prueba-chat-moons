@@ -14,6 +14,7 @@
   font: inherit;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .chatroom__messages {
@@ -24,6 +25,14 @@
 .chatroom__messages ol {
   list-style-type: none;
   padding: 0;
+}
+
+.chatroom__button {
+  padding: 0;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  min-width: 5rem;
+  margin-left: auto;
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,10 @@
+.name-form {
+  /* width: 50%; */
+  max-width: 20rem;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.name-form__button {
+  text-align: center;
+}

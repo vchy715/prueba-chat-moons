@@ -11,6 +11,7 @@ const { clog } = require('./helpers');
 const PORT = process.env.PORT || 4000;
 const USER_JOIN_EVENT = 'user_join';
 const USER_LEAVE_EVENT = 'user_leave';
+const USER_UPDATE_EVENT = 'user_update';
 const NEW_MESSAGE_EVENT = 'message_received';
 
 io.on('connection', (socket) => {
@@ -26,6 +27,10 @@ io.on('connection', (socket) => {
       ...msg,
       id: uuid.v4(),
     });
+  });
+
+  socket.on(USER_UPDATE_EVENT, (updatedData) => {
+    io.to(room).emit(USER_UPDATE_EVENT, updatedData);
   });
 
   socket.on('disconnect', () => {
