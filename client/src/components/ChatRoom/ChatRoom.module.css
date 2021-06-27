@@ -25,3 +25,12 @@
   list-style-type: none;
   padding: 0;
 }
+
+@media (max-width: 600px) {
+  .chatroom {
+    min-height: 30rem;
+  }
+  .chatroom__messages {
+    min-height: 20rem;
+  }
+}

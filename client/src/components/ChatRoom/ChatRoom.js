@@ -7,11 +7,11 @@ import Card from '../UI/Card/Card';
 import classes from './ChatRoom.module.css';
 
 const ChatRoom = (props) => {
-  const {messages, sendMessage} = useChat(props.userName);
+  const {messages, sendMessage} = useChat(props.userName, props.roomName);
   console.log('in ChatRoom');
   return (
     <Card className={classes.chatroom}>
-      <h2>Room:</h2>
+      <h2>Canal: {props.roomName}</h2>
       <Card className={classes['chatroom__messages']}>
         <ol>
           {messages.map((message) => {

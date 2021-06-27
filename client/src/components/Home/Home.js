@@ -8,8 +8,10 @@ import classes from './Home.module.css';
 const Home = (props) => {
   const [enteredName, setEnteredName] = useState('')
   const [nameIsValid, setNameIsValid] = useState(true);
+  const [enteredRoom, setEnteredRoom] = useState('General')
 
   const nameChangeHandler = (event) => setEnteredName(event.target.value)
+  const roomChangeHandler = (event) => setEnteredRoom(event.target.value)
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -17,7 +19,9 @@ const Home = (props) => {
       setNameIsValid(false);
     } else {
       props.onSetName(enteredName);
+      props.onSetRoom(enteredRoom);
       setEnteredName('');
+      setEnteredRoom('');
       props.onJoin();
     }
   }
@@ -32,6 +36,14 @@ const Home = (props) => {
           isValid={nameIsValid}
           value={enteredName}
           onChange={nameChangeHandler}
+        />
+        <Input
+          id='room'
+          label='Sala'
+          type='text'
+          value={enteredRoom}
+          isValid={true}
+          onChange={roomChangeHandler}
         />
         <div className={classes['home__button']}>
           <Button type='submit'>Join</Button>
