@@ -4,7 +4,6 @@ import MainHeader from './components/MainHeader/MainHeader';
 import Home from './components/Home/Home';
 import ChatRoom from './components/ChatRoom/ChatRoom';
 
-
 function App() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [userName, setUserName] = useState('');

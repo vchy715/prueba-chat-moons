@@ -1,0 +1,27 @@
+.chatroom {
+  width: 90%;
+  height: 90%;
+  min-height: 41rem;
+  max-width: 40rem;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px #4361ee;
+}
+
+.chatroom h2 {
+  font: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.chatroom__messages {
+  min-height: 30rem;
+  margin-bottom: 1rem;
+}
+
+.chatroom__messages ol {
+  list-style-type: none;
+  padding: 0;
+}

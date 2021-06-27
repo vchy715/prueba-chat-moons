@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 import Card from '../UI/Card/Card';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
-
 import classes from './Home.module.css';
 
 const Home = (props) => {
   const [enteredName, setEnteredName] = useState('')
+  const [nameIsValid, setNameIsValid] = useState(true);
 
   const nameChangeHandler = (event) => setEnteredName(event.target.value)
 
   const submitHandler = (event) => {
     event.preventDefault();
     if (enteredName === '') {
-
+      setNameIsValid(false);
     } else {
       props.onSetName(enteredName);
       setEnteredName('');
@@ -29,10 +29,11 @@ const Home = (props) => {
           id='name'
           label='Name'
           type='text'
+          isValid={nameIsValid}
           value={enteredName}
           onChange={nameChangeHandler}
         />
-        <div className={classes['home-button']}>
+        <div className={classes['home__button']}>
           <Button type='submit'>Join</Button>
         </div>
       </form>
