@@ -31,7 +31,7 @@ const Home = (props) => {
       <form onSubmit={submitHandler}>
         <Input
           id='name'
-          label='Name'
+          label='Nombre'
           type='text'
           isValid={nameIsValid}
           value={enteredName}
@@ -46,7 +46,7 @@ const Home = (props) => {
           onChange={roomChangeHandler}
         />
         <div className={classes['home__button']}>
-          <Button type='submit'>Join</Button>
+          <Button type='submit'>Entrar</Button>
         </div>
       </form>
     </Card>

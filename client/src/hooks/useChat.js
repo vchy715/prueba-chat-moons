@@ -38,6 +38,12 @@ const useChat = (userName, room = 'General') => {
           return message;
         })
       })
+      setUsers((prevUsers) => {
+        return prevUsers.map((user) => {
+          if (user.id === usrData.id) user.name = usrData.newName;
+          return user;
+        })
+      })
     })
 
     return () => {
